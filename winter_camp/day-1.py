@@ -19,3 +19,42 @@ def sum_of_all_odd_number(n):
     return total 
 n=int(input("Enter the number:"))
 print("The sum of all odd numbers up to", n, "is:", sum_of_all_odd_number(n))
+
+#-----------------------------------------------------------------------------------------------------------
+def sum_square_odd_numbers(n):
+    num = (n + 1) // 2
+    sum_odds = num ** 2
+    print(f"The sum of odd numbers up to {n} is {sum_odds}")
+    return sum_odds ** 2
+n = int(input("Enter the number: ")) 
+result = sum_square_odd_numbers(n)
+print(f"The square of the sum of odd numbers up to {n} is {result}")
+
+#-------------------------------------------------------------------------------------------------------------
+def count(num):
+    count = 0
+    while num != 0:
+        num //= 10  
+        count += 1
+    return count
+n = int(input("Enter the number: "))
+print(f"The number {n} has {count(n)} digits.")
+
+#----------------------------------------------------------------------------------------------------------------
+def count(num):
+    count = 0
+    while num != 0:
+        num //= 10  
+        count += 1
+    return count
+
+n = int(input("Enter the number: "))
+print(f"The number {n} has {count(n)} digits.")
+
+def sum(num):
+    total = 0
+    while num != 0:
+        total += num % 10
+        num //= 10
+    return total
+print(f"The sum of the digits of {n} is {sum(n)}.")
