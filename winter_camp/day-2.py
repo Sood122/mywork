@@ -15,3 +15,38 @@ def product(arr):
     return result
 arr = [1, 2, 3, 0, 4, 5]
 print(f"The maximum product is: {product(arr)}")
+
+#---------------find the number which is occuring more then n/2 times if there is no such then return -1.----------------------
+
+def occurance(arr):
+    candidate, count = None, 0
+    for num in arr:
+        if count == 0:
+            candidate, count = num, 1
+        elif num == candidate:
+            count += 1
+        else:
+            count -= 1
+    if arr.count(candidate) > len(arr) // 2:
+        return candidate
+    else:
+        return -1
+arr = list(map(int, input("Enter array elements separated by space: ").split()))
+print(f"The majority element is: {occurance(arr)}")
+
+#---------using nested loop-
+
+def occurence(arr):
+    n = len(arr)
+    for i in range(n):
+        count = 0
+        for j in range(n):
+            if arr[i] == arr[j]:
+                count += 1
+        if count > n // 2:
+            return arr[i]
+    return -1
+arr = list(map(int, input("Enter array elements with space: ").split()))
+print(f"Result: {occurence(arr)}")
+
+#--------------------------------------------------------------------------------------------------------------------------------
