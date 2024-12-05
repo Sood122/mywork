@@ -49,4 +49,47 @@ def occurence(arr):
 arr = list(map(int, input("Enter array elements with space: ").split()))
 print(f"Result: {occurence(arr)}")
 
-#--------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------find the greatest digit in the given number-----------------------------------
+def large_num(n):
+    str_num=str(n)
+    max_digit="0"
+    for digit in str_num:
+        if digit>max_digit:
+          max_digit=digit
+    return int(max_digit)
+n=int(input("Enter the number: "))
+print("The largest digit is :",large_num(n))
+#--------------------------------------------check if an array is sorted or not---------------------------------------
+def is_sorted(arr):
+    for i in range(len(arr) - 1):
+        if arr[i] > arr[i + 1]:
+            return False
+    return True
+arr=list(map(int,input("The the array: ").split()))
+if is_sorted(arr):
+    print("Sorted")
+else:
+    print("unsorted")
+#-------------------------------------find the smallest missing +ve number---------------------------------------------------    
+#find the smallest missing +ve number
+# let length of array=n
+# each element<=n
+#each element only one time
+
+def find_smallest_missing_positive(arr):
+    n = len(arr)
+    if any(num > n for num in arr):
+        return "Error: All elements should be >= number of elemts."
+    if len(set(arr)) != n:
+        return "Error: Each element should appear only once."
+    if any(num < 0 for num in arr):
+        return "Error: All elements should be non-negative."
+    for i in range(n):
+        while 1 <= arr[i] <= n and arr[i] != arr[arr[i] - 1]:
+            arr[arr[i] - 1], arr[i] = arr[i], arr[arr[i] - 1]
+    for i in range(n):
+        if arr[i] != i + 1:
+            return i + 1
+    return n + 1
+arr = list(map(int, input("Enter elements: ").split()))
+print(find_smallest_missing_positive(arr))
