@@ -295,3 +295,149 @@ int main()
     cout << "Result:" << sum_of_Array(arr, size) << endl; // here we are getting te final results
     return 0;
 }
+// WAP to find the maximum element in 1-D array
+#include <iostream>
+using namespace std;
+int max_element(int arr[], int size)
+{
+    int max = arr[0];
+    for (int i = 1; i < size; ++i)
+    {
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+int main()
+{
+    // int size=5;  here we are geeting the size of array
+    int size;
+    cout << "Enter the size: ";
+    cin >> size;
+    // int arr[]={1,2,3,4,5}; entering the value of array
+    int arr[size];
+    cout << "Enter the elements: ";
+    for (int i = 0; i < size; ++i) // checking the size
+    {
+        cin >> arr[i];
+    }
+    cout << "Result:" << max_element(arr, size) << endl; // here we are getting te final results
+    return 0;
+}
+// WAP to print * pattern triangle,pyramid,diamond
+
+#include <iostream>
+using namespace std;
+void pattern(int n)
+{
+    for (int i = 1; i <= n; ++i)
+    {
+        for (int j = 1; j <= i; ++j)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    cout<<endl;
+}
+void Diamond(int n)
+{
+    for (int i = 1; i <= n; ++i)
+    {
+        for (int j = i; j < n; ++j)
+        {
+            cout << " ";
+        }
+        for (int k = 1; k <= (2 * i - 1); ++k)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    for (int i = n - 1; i >= 1; --i)
+    {
+        for (int j = n; j > i; --j)
+        {
+            cout << " ";
+        }
+        for (int k = 1; k <= (2 * i - 1); ++k)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    cout<<endl;
+}
+void Pyramid(int n)
+{
+    for (int i = 1; i <= n; ++i)
+    {
+        for (int j = i; j < n; ++j)
+        {
+            cout << " ";
+        }
+        for (int k = 1; k <= (2 * i - 1); ++k)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    cout<<endl;
+}
+    int main()
+    {
+        int n;
+        cout << "Enter the number of rows: "<<endl;
+        cin >> n;
+        pattern(n);
+        Diamond(n);
+        Pyramid(n);
+        return 0;
+    }
+// WAP to find second largest element in an array
+#include <iostream>
+#include <climits>
+using namespace std;
+int second_largest_element(int arr[],int size){
+    // if (size < 2)  // if there is only one element in array
+    // {
+    //     cout << "Array must have at least two elements." << endl;
+    //     return -1;
+    // }
+    int first = INT_MIN, second = INT_MIN;
+    for (int i = 0; i < size; ++i)
+    {
+        if (arr[i] > first)
+        {
+            second = first;
+            first = arr[i];
+        }
+        else if (arr[i] > second && arr[i] != first)
+        {
+            second = arr[i];
+        }
+    }
+    // if (second == INT_MIN)  //if there is not second largest number
+    // {
+    //     cout << "No second largest element found." << endl;
+    //     return -1;
+    // }
+    return second;
+}
+int main(){
+     int size;
+    cout << "Enter the size: ";
+    cin >> size;
+    // int arr[]={1,2,3,4,5}; entering the value of array
+    int arr[size];
+    cout << "Enter the elements: ";
+    for (int i = 0; i < size; ++i) // checking the size
+    {
+        cin >> arr[i];
+    }
+    cout << "Result:" << second_largest_element(arr, size) << endl; // here we are getting te final results
+    return 0;
+}
+//
