@@ -238,19 +238,60 @@ int main()
 #include <iostream>
 using namespace std;
 
-int fibonacci(int n) {
-    if (n == 1) {
+int fibonacci(int n)
+{
+    if (n == 1)
+    {
         return 0;
-    } else if (n == 2) {
+    }
+    else if (n == 2)
+    {
         return 1;
-    } else {
+    }
+    else
+    {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }
-int main() {
+int main()
+{
     int n;
     cout << "Enter the number: ";
     cin >> n;
     cout << "The result is : " << fibonacci(n) << endl;
+    return 0;
+}
+// Array:
+//  Collection of homogenious elements.
+//  Antiguese memory allowcation.
+//  It has a fixed size.
+//  to declare an array we need
+//  int arr[5]={1,2,3,4,5}
+//  WAP to create a function to add all the elements in an array.
+#include <iostream>
+using namespace std;
+int sum_of_Array(int arr[], int size) // function to find sum
+{
+    int sum = 0;
+    for (int i = 0; i < size; ++i)
+    {
+        sum += arr[i];
+    }
+    return sum;
+}
+int main()
+{
+    // int size=5;  here we are geeting the size of array
+    int size;
+    cout << "Enter the size: ";
+    cin >> size;
+    // int arr[]={1,2,3,4,5}; entering the value of array
+    int arr[size];
+    cout << "Enter the elements: ";
+    for (int i = 0; i < size; ++i) // checking the size
+    {
+        cin >> arr[i];
+    }
+    cout << "Result:" << sum_of_Array(arr, size) << endl; // here we are getting te final results
     return 0;
 }
