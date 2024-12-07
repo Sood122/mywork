@@ -86,14 +86,52 @@ void reverse_String(string &str, int start, int end)
     swap(str[start], str[end]);
     reverse_String(str, start + 1, end - 1);
 }
-int main(){
+int main()
+{
     // string str="HELLO";
     string str;
-    cout<<"Enter the string"<<endl;
+    cout << "Enter the string" << endl;
     // cin>> str;
     getline(cin, str);
-     reverse_String(str, 0, str.length() - 1);
+    reverse_String(str, 0, str.length() - 1);
     cout << "Reversed string: " << str << endl;
     return 0;
 }
-// 
+// WAP to check one number is a power of 3 or not using recursion
+
+#include <iostream>
+using namespace std;
+
+bool check(int n)
+{
+    if (n < 1)
+    {
+        return false;
+    }
+    if (n == 1)
+    {
+        return true;
+    }
+    if (n % 3 != 0)
+    {
+        return false;
+    }
+    return check(n / 3);
+}
+
+int main()
+{
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    if (check(n))
+    {
+        cout <<"TRUE" << endl;
+    }
+    else
+    {
+        cout <<"False" << endl;
+    }
+    return 0;
+}
+// all code executed and runned
